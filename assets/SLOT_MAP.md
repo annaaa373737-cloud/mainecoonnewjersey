@@ -1,4 +1,4 @@
-# Image Slot Map — Hollywood Coon
+# Image Slot Map — Garden State Coon
 
 > Maps every image slot referenced in HTML to its source file, visual content, and production status.
 > Updated: 2026-04-10
@@ -9,16 +9,16 @@
 
 | File | Dimensions | Visual Content | Assigned Slot | Page(s) | Status |
 |---|---|---|---|---|---|
-| `logo.webp` | 1536×1024 | Gold cattery logo with leaping Maine Coon silhouette, "A" star emblem, text "HOLLYWOODCOON" on black background | Logo (all pages) | All 16 HTML | NEEDS_AVIF |
-| `hero-home.webp` | 1080×1341 | Silver tabby Maine Coon standing full-body on dark marble, fluffy tail raised, HollywoodCoon watermark | Hero banner | index.html | NEEDS_AVIF |
+| `logo.webp` | 1536×1024 | Gold cattery logo with leaping Maine Coon silhouette, "A" star emblem, text "GARDEN STATE COON" on black background | Logo (all pages) | All 16 HTML | NEEDS_AVIF |
+| `hero-home.webp` | 1080×1341 | Silver tabby Maine Coon standing full-body on dark marble, fluffy tail raised, Garden State Coon watermark | Hero banner | index.html | NEEDS_AVIF |
 | `hero-gallery.webp` | 1600×1073 | Two Maine Coon kittens playing on dark velvet — silver tabby and brown tabby, action shot | Hero banner | gallery.html | NEEDS_AVIF |
 | `hero-kittens.webp` | 1080×1080 | Close-up portrait of silver tabby Maine Coon face, green-yellow eyes, dramatic studio lighting | Hero banner | kittens.html | NEEDS_AVIF |
-| `gallery-1.webp` | 1600×893 | Brown classic tabby Maine Coon lying on dark marble slab, amber eyes, HollywoodCoon logo top-left | Gallery thumbnail 1 | gallery.html | NEEDS_AVIF |
+| `gallery-1.webp` | 1600×893 | Brown classic tabby Maine Coon lying on dark marble slab, amber eyes, Garden State Coon logo top-left | Gallery thumbnail 1 | gallery.html | NEEDS_AVIF |
 | `gallery-2.webp` | 1446×1080 | Brown tabby mother Maine Coon grooming kitten on burgundy velvet blanket, warm interior lighting | Gallery thumbnail 2 | gallery.html | NEEDS_AVIF |
 | `gallery-3.webp` | 1080×1446 | Red/ginger Maine Coon sitting upright in dark leather armchair, portrait orientation, studio lighting | Gallery thumbnail 3 | gallery.html | NEEDS_AVIF |
 | `gallery-4.webp` | 1600×893 | Brown classic tabby Maine Coon lying on dark marble slab (duplicate of gallery-1 source) | Gallery thumbnail 4 | gallery.html | NEEDS_AVIF |
-| `cat-atlas.webp` | 1080×1080 | Black smoke Maine Coon full-body standing, yellow eyes, dramatic top spotlight on dark background | Cat profile — Atlas | our-cats.html | NEEDS_AVIF |
-| `cat-elara.webp` | 1600×893 | Three Maine Coons sitting side by side on dark bench — silver tabby, brown tabby, black smoke | Cat profile — Elara (group shot) | our-cats.html | NEEDS_AVIF |
+| `cat-atlas.webp` | 1080×1080 | Black smoke Maine Coon full-body standing, yellow eyes, dramatic top spotlight on dark background | Cat profile — Hudson | our-cats.html | NEEDS_AVIF |
+| `cat-elara.webp` | 1600×893 | Three Maine Coons sitting side by side on dark bench — silver tabby, brown tabby, black smoke | Cat profile — Willow (group shot) | our-cats.html | NEEDS_AVIF |
 | `about-preview.webp` | 1080×1080 | Silver/white Maine Coon kitten close-up, blue eyes, soft focus, no watermark | About preview | about.html, index.html | NEEDS_AVIF |
 
 ---
@@ -117,7 +117,7 @@ Each needs 7 responsive variants.
 | `parent-sire` | our-cats.html, kitten-detail.html | No source | NEEDS_GENERATION |
 | `parent-dam` | our-cats.html, kitten-detail.html | No source | NEEDS_GENERATION |
 
-> Note: `cat-atlas.webp` (1080×1080, black smoke MC) and `cat-elara.webp` (1600×893, group of 3 MCs) exist but may not match the individual cat-1..4 slot naming convention. Confirm with cattery owner which cat maps to which slot.
+> Note: `cat-atlas.webp` (1080×1080, black smoke MC, Hudson) and `cat-elara.webp` (1600×893, group of 3 MCs, Willow) exist but may not match the individual cat-1..4 slot naming convention. Confirm with cattery owner which cat maps to which slot.
 
 ---
 

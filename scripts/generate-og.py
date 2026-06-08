@@ -2,8 +2,8 @@ from PIL import Image, ImageDraw, ImageFont
 import os
 
 pages = [
-  ('og-index.jpg', 'assets/hero-home-1920.jpg', 'Hollywood Coon — Maine Coon Cattery'),
-  ('og-about.jpg', 'assets/hero-about-1920.jpg', 'About Hollywood Coon'),
+  ('og-index.jpg', 'assets/hero-home-1920.jpg', 'Garden State Coon — Maine Coon Cattery'),
+  ('og-about.jpg', 'assets/hero-about-1920.jpg', 'About Garden State Coon'),
   ('og-kittens.jpg', 'assets/hero-kittens-1920.jpg', 'Available Kittens'),
   ('og-gallery.jpg', 'assets/hero-gallery-1920.jpg', 'Photo Gallery'),
   ('og-our-cats.jpg', 'assets/hero-our-cats-1920.jpg', 'Our Cats'),
@@ -26,6 +26,6 @@ for out, src, text in pages:
   img.paste(overlay, mask=overlay)
   d = ImageDraw.Draw(img)
   d.text((60,260), text, fill=(255,255,255), font_size=48)
-  d.text((60,340), 'hollywoodcoon.com', fill=(201,169,110), font_size=28)
+  d.text((60,340), 'gardenstatecoon.com', fill=(201,169,110), font_size=28)
   img.save(f'assets/{out}', quality=85)
   print(f'  ✓ {out}')
