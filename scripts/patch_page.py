@@ -2,8 +2,8 @@
 """Page patcher — see patch-pages.sh for changelog."""
 import re, sys, pathlib
 
-OLD_DOMAIN = "https://hollywoodcoon.com"
-NEW_DOMAIN = "https://arnold3737.github.io/hollywoodcoon"
+OLD_DOMAIN = "https://gardenstatecoon.com"
+NEW_DOMAIN = "https://gardenstatecoon.com"
 
 CF_BEACON_RE = re.compile(
     r'\n?<!-- Cloudflare Web Analytics -->\s*\n\s*<script[^>]*cloudflareinsights[^>]*>\s*</script>\s*',

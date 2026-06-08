@@ -1,15 +1,15 @@
 /* === DESIGN TOKENS === */
-/* All values are stubs — replace with final brand tokens */
+/* Garden State Coon brand palette */
 
 :root {
   /* === COLORS === */
-  --color-primary:    #1a1a2e;
-  --color-secondary:  #c9a96e;
-  --color-accent:     #e8b86d;
-  --color-bg:         #faf9f6;
-  --color-text:       #2d2d2d;
-  --color-text-muted: #6b6b6b;
-  --color-border:     #e0dbd2;
+  --color-primary:    #1a2e1a;  /* deep garden green */
+  --color-secondary:  #c9a96e;  /* warm gold accent */
+  --color-accent:     #4a7c59;  /* leaf green */
+  --color-bg:         #f7f9f5;  /* soft off-white background */
+  --color-text:       #20271f;
+  --color-text-muted: #565c52;
+  --color-border:     #d9ded2;
   --color-surface:    #ffffff;
 
   /* === SHADOWS === */
@@ -59,10 +59,10 @@
 /* === DARK MODE OVERRIDES === */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-bg:         #0f0e12;
-    --color-surface:    #1a1a2e;
-    --color-text:       #f0ede8;
-    --color-text-muted: #a8a5a0;
-    --color-border:     #2d2a34;
+    --color-bg:         #0e120d;
+    --color-surface:    #18241a;
+    --color-text:       #eef2e8;
+    --color-text-muted: #aeb6a6;
+    --color-border:     #2a342a;
   }
 }

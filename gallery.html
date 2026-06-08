@@ -7,7 +7,7 @@
   <link rel="icon" href="favicon.ico" sizes="32x32">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/icon-192.png">
-  <meta name="description" content="Browse photos of our Maine Coon kittens, adult cats, and cattery at Garden State Coon in Los Angeles. Champion bloodlines, stunning coats.">
+  <meta name="description" content="Browse photos of our Maine Coon kittens, adult cats, and cattery at Garden State Coon in Edison, New Jersey.">
   <link rel="canonical" href="https://gardenstatecoon.com/gallery.html">
   <link rel="preload" as="font" type="font/woff2" href="fonts/cormorant-garamond-regular.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="fonts/jost-regular.woff2" crossorigin>
@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="css/pages/gallery.css">
   <!-- Open Graph -->
   <meta property="og:title" content="Gallery | Garden State Coon">
-  <meta property="og:description" content="Browse photos of our Maine Coon kittens, adult cats, and cattery at Garden State Coon in Los Angeles.">
+  <meta property="og:description" content="Browse photos of our Maine Coon kittens, adult cats, and cattery at Garden State Coon in Edison, New Jersey.">
   <meta property="og:image" content="https://gardenstatecoon.com/assets/og-gallery.jpg">
   <meta property="og:url" content="https://gardenstatecoon.com/gallery.html">
   <meta property="og:type" content="website">
@@ -46,7 +46,7 @@
       {
         "@type": "ImageGallery",
         "name": "Garden State Coon Gallery",
-        "description": "Photo gallery of Maine Coon kittens, adult cats, and the Garden State Coon cattery in Los Angeles.",
+        "description": "Photo gallery of Maine Coon kittens, adult cats, and the Garden State Coon cattery in Edison, New Jersey.",
         "url": "https://gardenstatecoon.com/gallery.html"
       },
       {
@@ -69,7 +69,16 @@
     ]
   }
   </script>
-  <!-- Speculation Rules --></head>
+  <!-- Speculation Rules -->
+  <script type="speculationrules">
+  {
+    "prerender": [
+      { "where": { "href_matches": "/kittens.html" }, "eagerness": "moderate" },
+      { "where": { "href_matches": "/contact.html" }, "eagerness": "moderate" }
+    ]
+  }
+  </script>
+</head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
@@ -123,7 +132,7 @@
         </picture>
       <div class="hero__content">
         <h1 id="gallery-hero-heading" class="hero__title">Gallery</h1>
-        <p class="hero__subtitle">Our kittens, adult cats, and cattery life in Los Angeles</p>
+        <p class="hero__subtitle">Our kittens, adult cats, and cattery life in Edison, New Jersey</p>
       </div>
     </section>
 

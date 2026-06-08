@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * add-kitten.js — Hollywood Coon
+ * add-kitten.js — Garden State Coon
  *
  * Автоматически создаёт карточку нового котёнка из папки с фото и видео,
  * обновляет kittens.html + sitemap.xml и публикует изменения на GitHub.
@@ -48,7 +48,7 @@ if (!fs.existsSync(CONFIG_PATH)) {
 }
 const cfg = JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf8'));
 
-const REQUIRED = ['name', 'gender', 'color', 'born', 'price', 'status', 'description'];
+const REQUIRED = ['name', 'gender', 'color', 'status', 'description'];
 const missing  = REQUIRED.filter(f => !cfg[f]);
 if (missing.length) {
   console.error(`❌ В kitten.json не хватает полей: ${missing.join(', ')}`);
@@ -171,35 +171,44 @@ function buildDetailHTML(images, videoName) {
       })}'`
     : '';
 
-  const sireName  = cfg.sire?.name  || 'Atlas';
-  const sireTitle = cfg.sire?.title || 'TICA Champion · Brown Classic Tabby · HCM/PKD1/SMA Clear';
-  const damName   = cfg.dam?.name   || 'Elara';
-  const damTitle  = cfg.dam?.title  || 'Blue Smoke · HCM/PKD1 Clear';
-  const health    = cfg.healthTesting || 'HCM echocardiogram: Clear. PKD1 DNA: Clear. SMA DNA: Clear. FIV/FeLV: Negative. Microchipped. FVRCP ×2. Dewormed ×3.';
+  const sireName  = cfg.sire?.name  || 'Hudson';
+  const sireTitle = cfg.sire?.title || 'Brown Classic Tabby · Registered lines · Health-screened';
+  const damName   = cfg.dam?.name   || 'Willow';
+  const damTitle  = cfg.dam?.title  || 'Blue Smoke · Registered lines · Health-screened';
+  const health    = cfg.healthTesting || `${cfg.name} comes from health-screened breeding cats of registered lines. Before going home she is examined by our veterinarian, receives age-appropriate vaccinations, is dewormed on schedule, and is litter-box trained. We provide a record of veterinary care for your own vet.`;
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@type': 'Product',
+        '@type': ['Product', 'Pet'],
+        additionalType: 'https://schema.org/Pet',
         name: `${cfg.name} — ${cfg.color} Maine Coon Kitten`,
         description: cfg.description,
-        image: `https://hollywoodcoon.com/assets/${main.baseName}-1920.jpg`,
-        brand: { '@type': 'Organization', name: 'Hollywood Coon' },
+        image: `https://gardenstatecoon.com/assets/${main.baseName}-1920.jpg`,
+        brand: { '@type': 'Organization', name: 'Garden State Coon' },
         offers: {
           '@type': 'Offer',
-          url: `https://hollywoodcoon.com/${detailPage}`,
-          priceCurrency: 'USD',
-          price: String(cfg.price),
-          availability
+          url: `https://gardenstatecoon.com/${detailPage}`,
+          availability,
+          priceSpecification: {
+            '@type': 'PriceSpecification',
+            priceCurrency: 'USD',
+            description: 'Price available upon request'
+          },
+          seller: {
+            '@type': 'Organization',
+            name: 'Garden State Coon',
+            url: 'https://gardenstatecoon.com/'
+          }
         }
       },
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://hollywoodcoon.com/' },
-          { '@type': 'ListItem', position: 2, name: 'Available Kittens', item: 'https://hollywoodcoon.com/kittens.html' },
-          { '@type': 'ListItem', position: 3, name: cfg.name, item: `https://hollywoodcoon.com/${detailPage}` }
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://gardenstatecoon.com/' },
+          { '@type': 'ListItem', position: 2, name: 'Available Kittens', item: 'https://gardenstatecoon.com/kittens.html' },
+          { '@type': 'ListItem', position: 3, name: cfg.name, item: `https://gardenstatecoon.com/${detailPage}` }
         ]
       }
     ]
@@ -210,12 +219,12 @@ function buildDetailHTML(images, videoName) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${escHtml(cfg.name)} — ${escHtml(cfg.color)} Maine Coon | Hollywood Coon</title>
+  <title>${escHtml(cfg.name)} — ${escHtml(cfg.color)} Maine Coon | Garden State Coon</title>
   <link rel="icon" href="favicon.ico" sizes="32x32">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/icon-192.png">
-  <meta name="description" content="${escHtml(cfg.name)} — ${escHtml(cfg.color)} ${escHtml(cfg.gender)} Maine Coon kitten. Born ${escHtml(cfg.born)}. $${cfg.price}. Health-tested, TICA-registered. Hollywood Coon cattery, Los Angeles.">
-  <link rel="canonical" href="https://hollywoodcoon.com/${detailPage}">
+  <meta name="description" content="${escHtml(cfg.name)} — ${escHtml(cfg.color)} ${escHtml(cfg.gender)} Maine Coon kitten at Garden State Coon, Edison, New Jersey. Health-screened lines, raised in our home. Price available upon request.">
+  <link rel="canonical" href="https://gardenstatecoon.com/${detailPage}">
   <link rel="preload" as="font" type="font/woff2" href="fonts/cormorant-garamond-regular.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="fonts/jost-regular.woff2" crossorigin>
   <link rel="stylesheet" href="css/variables.css">
@@ -223,15 +232,15 @@ function buildDetailHTML(images, videoName) {
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/pages/kitten-detail.css">
   <!-- Open Graph -->
-  <meta property="og:title" content="${escHtml(cfg.name)} — ${escHtml(cfg.color)} Maine Coon Kitten | Hollywood Coon">
-  <meta property="og:description" content="${escHtml(cfg.name)} — ${escHtml(cfg.color)} ${escHtml(cfg.gender)} Maine Coon kitten. Born ${escHtml(cfg.born)}. $${cfg.price}. Health-tested, TICA-registered.">
-  <meta property="og:image" content="https://hollywoodcoon.com/assets/${main.baseName}-1920.jpg">
-  <meta property="og:url" content="https://hollywoodcoon.com/${detailPage}">
+  <meta property="og:title" content="${escHtml(cfg.name)} — ${escHtml(cfg.color)} Maine Coon Kitten | Garden State Coon">
+  <meta property="og:description" content="${escHtml(cfg.name)} — ${escHtml(cfg.color)} ${escHtml(cfg.gender)} Maine Coon kitten at Garden State Coon, Edison, New Jersey. Price available upon request.">
+  <meta property="og:image" content="https://gardenstatecoon.com/assets/${main.baseName}-1920.jpg">
+  <meta property="og:url" content="https://gardenstatecoon.com/${detailPage}">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <!-- PWA -->
   <link rel="manifest" href="site.webmanifest">
-  <meta name="theme-color" content="#000000">
+  <meta name="theme-color" content="#1a2e1a">
   <!-- View Transitions -->
   <meta name="view-transition" content="same-origin">
   <!-- Security -->
@@ -249,8 +258,6 @@ ${JSON.stringify(jsonLd, null, 2).split('\n').map(l => '  ' + l).join('\n')}
     ]
   }
   </script>
-<!-- Cloudflare Web Analytics -->
-<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "CLOUDFLARE_TOKEN_PLACEHOLDER"}'></script>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -258,7 +265,7 @@ ${JSON.stringify(jsonLd, null, 2).split('\n').map(l => '  ' + l).join('\n')}
   <!-- NAV -->
   <header role="banner" class="site-header">
     <nav aria-label="Main navigation" data-nav class="nav">
-      <a href="index.html" class="nav__logo">Hollywood Coon</a>
+      <a href="index.html" class="nav__logo">Garden State Coon</a>
       <button type="button" data-hamburger
               aria-expanded="false"
               aria-controls="nav-menu"
@@ -328,17 +335,16 @@ ${JSON.stringify(jsonLd, null, 2).split('\n').map(l => '  ' + l).join('\n')}
           <div class="kitten-detail__meta">
             <p>${escHtml(cfg.gender)}</p>
             <p>${escHtml(cfg.color)}</p>
-            <p>Born ${escHtml(cfg.born)}</p>
-            <p>$${cfg.price}</p>
+            <p>Price available upon request</p>
           </div>
           <p>${escHtml(cfg.description)}</p>
 
-          <h2>Health Testing</h2>
+          <h2>Health &amp; Care</h2>
           <p>${escHtml(health)}</p>
 
           <div class="kitten-detail__actions">
             <a href="contact.html" class="btn btn-primary">Reserve ${escHtml(cfg.name)}</a>
-            <a href="waiting-list.html" class="btn btn-secondary">Join Waitlist</a>
+            <a href="waiting-list.html" class="btn btn-secondary">Join Waiting List</a>
           </div>
         </div>
       </div>
@@ -428,7 +434,7 @@ ${JSON.stringify(jsonLd, null, 2).split('\n').map(l => '  ' + l).join('\n')}
           <li><a href="cookie-policy.html" class="footer__link">Cookie Policy</a></li>
         </ul>
       </nav>
-      <p class="footer__copy">© 2026 Hollywood Coon. All rights reserved.</p>
+      <p class="footer__copy">© 2026 Garden State Coon. All rights reserved.</p>
     </div>
   </footer>
 
@@ -439,11 +445,6 @@ ${JSON.stringify(jsonLd, null, 2).split('\n').map(l => '  ' + l).join('\n')}
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('sw.js');
     }
-  </script>
-  <script type="module" defer>
-    import {onLCP,onINP,onCLS,onFCP,onTTFB} from 'https://unpkg.com/web-vitals@3/dist/web-vitals.attribution.js';
-    const report = ({name,value,rating}) => console.log(\`[CWV] \${name}: \${Math.round(value)} (\${rating})\`);
-    onLCP(report); onINP(report); onCLS(report); onFCP(report); onTTFB(report);
   </script>
 </body>
 </html>
@@ -478,7 +479,7 @@ function updateKittensPage(mainBase) {
           <div class="card__body">
             <span class="kitten-badge">${statusLabel(cfg.status)}</span>
             <h3 class="card__title">${escHtml(cfg.name)}</h3>
-            <p class="card__text">${escHtml(cfg.gender)} · ${escHtml(cfg.color)} · Born ${escHtml(cfg.born)} · $${cfg.price}</p>
+            <p class="card__text">${escHtml(cfg.gender)} · ${escHtml(cfg.color)} · Price available upon request</p>
           </div>
         </a>`;
 
@@ -503,7 +504,7 @@ function updateKittensPage(mainBase) {
           '@type': 'ListItem',
           position: itemList.itemListElement.length + 1,
           name: `${cfg.name} — ${cfg.color} ${cfg.gender}`,
-          url: `https://hollywoodcoon.com/${detailPage}`
+          url: `https://gardenstatecoon.com/${detailPage}`
         });
       }
       const pretty = JSON.stringify(data, null, 2).split('\n').map(l => '  ' + l).join('\n');
@@ -522,7 +523,7 @@ function updateSitemap() {
   const sp = path.join(REPO_ROOT, 'sitemap.xml');
   let xml = fs.readFileSync(sp, 'utf8');
   const today = new Date().toISOString().slice(0, 10);
-  const entry = `  <url>\n    <loc>https://arnold3737.github.io/hollywoodcoon/${detailPage}</loc>\n    <lastmod>${today}</lastmod>\n    <priority>0.8</priority>\n  </url>\n`;
+  const entry = `  <url>\n    <loc>https://gardenstatecoon.com/${detailPage}</loc>\n    <lastmod>${today}</lastmod>\n    <priority>0.8</priority>\n  </url>\n`;
   xml = xml.replace('</urlset>', entry + '</urlset>');
   if (!DRY_RUN) fs.writeFileSync(sp, xml, 'utf8');
   console.log('  ✓ sitemap.xml обновлён');
@@ -545,13 +546,12 @@ function gitPublish() {
   }
   run('git push');
   console.log(`\n🚀 Опубликовано! Сайт обновится за ~1 минуту.`);
-  console.log(`   → https://hollywoodcoon.com/${detailPage}`);
-  console.log(`   → https://arnold3737.github.io/hollywoodcoon/${detailPage}`);
+  console.log(`   → https://gardenstatecoon.com/${detailPage}`);
 }
 
 // ── Главная функция ─────────────────────────────────────────────────────────
 (async function main() {
-  console.log(`\n🐱 Hollywood Coon — добавление котёнка: ${cfg.name}`);
+  console.log(`\n🐱 Garden State Coon — добавление котёнка: ${cfg.name}`);
   console.log(`   Папка: ${KITTEN_DIR}`);
   console.log(`   Карточка: ${detailPage} (№${N})`);
   console.log(`   Фото: ${usedPhotos.length}, видео: ${videoFile ? 'да' : 'нет'}`);

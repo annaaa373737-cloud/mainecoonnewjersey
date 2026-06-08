@@ -4,7 +4,7 @@
 
 Auto-deploys from `main` branch via GitHub Actions (`.github/workflows/pages.yml`).
 
-Custom domain: `hollywoodcoon.com` (configured via `CNAME` file).
+Custom domain: `gardenstatecoon.com` (configured via `CNAME` file).
 
 After first deploy, enable GitHub Pages in **Settings → Pages → Source: GitHub Actions**.
 
@@ -21,8 +21,8 @@ After first deploy, enable GitHub Pages in **Settings → Pages → Source: GitH
 
 | Type  | Name | Content              |
 |-------|------|----------------------|
-| CNAME | @    | arnold3737.github.io |
-| CNAME | www  | arnold3737.github.io |
+| CNAME | @    | <your-github-username>.github.io |
+| CNAME | www  | <your-github-username>.github.io |
 
 ## Formspree
 
@@ -33,5 +33,5 @@ Replace `XXXXXXXX` in `contact.html` and `waiting-list.html` form `action` URLs 
 - [ ] Verify HTTPS redirect works
 - [ ] Run Lighthouse audit (target: 90+ all categories)
 - [ ] Run axe DevTools: F12 → Extensions → axe DevTools → Analyze Page (target: 0 Critical/Serious)
-- [ ] Submit sitemap to Google Search Console: `https://hollywoodcoon.com/sitemap.xml`
+- [ ] Submit sitemap to Google Search Console: `https://gardenstatecoon.com/sitemap.xml`
 - [ ] Verify og:image renders on [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/)

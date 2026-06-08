@@ -36,7 +36,7 @@ if (!('scheduler' in globalThis)) { globalThis.scheduler = { yield: () => Promis
            Becomes inert once a real Formspree ID replaces XXXXXXXX. */
         if (/\/X{4,}$/.test(new URL(form.action, location.href).pathname)) {
           status.innerHTML =
-            'Our contact form is not yet connected. Please email us directly at <a href="mailto:hello@hollywoodcoon.com">hello@hollywoodcoon.com</a>.';
+            'Our contact form is not yet connected. Please email us directly at <a href="mailto:hello@gardenstatecoon.com">hello@gardenstatecoon.com</a>.';
           return;
         }
 

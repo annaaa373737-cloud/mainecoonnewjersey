@@ -7,7 +7,7 @@
   <link rel="icon" href="favicon.ico" sizes="32x32">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/icon-192.png">
-  <meta name="description" content="Join the Garden State Coon waiting list for upcoming Maine Coon litters. Submit your interest, secure your spot with a $500 deposit, and we'll match you with the perfect kitten.">
+  <meta name="description" content="Join the Garden State Coon waiting list for upcoming Maine Coon litters. Submit your interest, secure your spot with a non-refundable deposit, and we'll match you with the perfect kitten.">
   <link rel="canonical" href="https://gardenstatecoon.com/waiting-list.html">
   <link rel="preload" as="font" type="font/woff2" href="fonts/cormorant-garamond-regular.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="fonts/jost-regular.woff2" crossorigin>
@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="css/pages/waiting-list.css">
   <!-- Open Graph -->
   <meta property="og:title" content="Join the Waiting List | Garden State Coon Maine Coon Kittens">
-  <meta property="og:description" content="Join the Garden State Coon waiting list for upcoming Maine Coon litters. Submit your interest, secure your spot with a $500 deposit, and we'll match you with the perfect kitten.">
+  <meta property="og:description" content="Join the Garden State Coon waiting list for upcoming Maine Coon litters. Submit your interest, secure your spot with a non-refundable deposit, and we'll match you with the perfect kitten.">
   <meta property="og:image" content="https://gardenstatecoon.com/assets/og-waiting-list.jpg">
   <meta property="og:url" content="https://gardenstatecoon.com/waiting-list.html">
   <meta property="og:type" content="website">
@@ -46,7 +46,7 @@
       {
         "@type": "WebPage",
         "name": "Waiting List — Garden State Coon",
-        "description": "Join the Garden State Coon waiting list for upcoming Maine Coon litters. Submit your interest and secure your spot with a $500 deposit.",
+        "description": "Join the Garden State Coon waiting list for upcoming Maine Coon litters. Submit your interest and secure your spot with a non-refundable deposit.",
         "url": "https://gardenstatecoon.com/waiting-list.html"
       },
       {
@@ -69,7 +69,16 @@
     ]
   }
   </script>
-  <!-- Speculation Rules --></head>
+  <!-- Speculation Rules -->
+  <script type="speculationrules">
+  {
+    "prerender": [
+      { "where": { "href_matches": "/kittens.html" }, "eagerness": "moderate" },
+      { "where": { "href_matches": "/contact.html" }, "eagerness": "moderate" }
+    ]
+  }
+  </script>
+</head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
@@ -123,7 +132,7 @@
         </picture>
       <div class="hero__content">
         <h1 id="waiting-hero-heading" class="hero__title">Join Our Waiting List</h1>
-        <p class="hero__subtitle">Reserve your place for an upcoming litter of champion-lineage Maine Coon kittens</p>
+        <p class="hero__subtitle">Reserve your place for an upcoming litter of Maine Coon kittens from registered lines</p>
       </div>
     </section>
 
@@ -152,7 +161,7 @@
               <div class="waiting-step__number">3</div>
               <div>
                 <h3>Secure Your Spot</h3>
-                <p>Secure your spot with a $500 deposit (non-refundable, applied to kitten price). Your deposit reserves your place for the next available litter matching your preferences.</p>
+                <p>Secure your spot with a non-refundable deposit (applied to kitten price). Your deposit reserves your place for the next available litter matching your preferences.</p>
               </div>
             </div>
             <div class="waiting-step">
@@ -185,7 +194,7 @@
     <!-- DEPOSIT TERMS -->
     <section class="section" aria-labelledby="deposit-heading">
       <h2 id="deposit-heading" class="section__heading">Deposit Terms</h2>
-      <p>$500 non-refundable deposit. Applied toward final kitten price. Deposit reserves your place for the next available litter matching your preferences.</p>
+      <p>A non-refundable deposit is required, applied toward the final kitten price. Your deposit reserves your place for the next available litter matching your preferences.</p>
     </section>
 
     <!-- JOIN FORM -->

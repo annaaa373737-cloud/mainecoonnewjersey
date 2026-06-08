@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aurora — Blue Smoke Maine Coon Kitten | Garden State Coon</title>
+  <title>Maple — Blue Smoke Maine Coon | Garden State Coon</title>
   <link rel="icon" href="favicon.ico" sizes="32x32">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/icon-192.png">
-  <meta name="description" content="Meet Aurora, a Blue Smoke Maine Coon female kitten born March 2026. $2,200. TICA registered, health tested. Contact Garden State Coon cattery.">
+  <meta name="description" content="Maple — blue smoke female Maine Coon kitten at Garden State Coon, Edison, New Jersey. Health-screened lines, raised in our home. Price available upon request.">
   <link rel="canonical" href="https://gardenstatecoon.com/kitten-detail.html">
   <link rel="preload" as="font" type="font/woff2" href="fonts/cormorant-garamond-regular.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="fonts/jost-regular.woff2" crossorigin>
@@ -16,8 +16,8 @@
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/pages/kitten-detail.css">
   <!-- Open Graph -->
-  <meta property="og:title" content="Aurora — Blue Smoke Maine Coon Kitten | Garden State Coon">
-  <meta property="og:description" content="Meet Aurora, a Blue Smoke Maine Coon female kitten born March 2026. $2,200. TICA registered, health tested. Contact Garden State Coon cattery.">
+  <meta property="og:title" content="Maple — Blue Smoke Maine Coon Kitten | Garden State Coon">
+  <meta property="og:description" content="Maple — blue smoke female Maine Coon kitten at Garden State Coon, Edison, New Jersey. Price available upon request.">
   <meta property="og:image" content="https://gardenstatecoon.com/assets/og-kitten-detail.jpg">
   <meta property="og:url" content="https://gardenstatecoon.com/kitten-detail.html">
   <meta property="og:type" content="website">
@@ -44,10 +44,11 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Product",
-        "name": "Aurora — Blue Smoke Maine Coon Kitten",
-        "description": "Aurora is a stunning Blue Smoke female Maine Coon kitten with a silky coat and captivating golden eyes. Born March 15, 2026. TICA registered, health tested.",
-        "image": "https://gardenstatecoon.com/assets/kitten-detail-1920.jpg",
+        "@type": ["Product", "Pet"],
+        "additionalType": "https://schema.org/Pet",
+        "name": "Maple — Blue Smoke Maine Coon Kitten",
+        "description": "Maple is a sweet, easygoing blue smoke female with a soft, smoky coat. She loves a warm lap and gentle play — a calm, affectionate companion. Well-socialized and raised in our home.",
+        "image": "https://gardenstatecoon.com/assets/kitten-1-1920.jpg",
         "brand": {
           "@type": "Organization",
           "name": "Garden State Coon"
@@ -55,9 +56,17 @@
         "offers": {
           "@type": "Offer",
           "url": "https://gardenstatecoon.com/kitten-detail.html",
-          "priceCurrency": "USD",
-          "price": "2200",
-          "availability": "https://schema.org/InStock"
+          "availability": "https://schema.org/InStock",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "priceCurrency": "USD",
+            "description": "Price available upon request"
+          },
+          "seller": {
+            "@type": "Organization",
+            "name": "Garden State Coon",
+            "url": "https://gardenstatecoon.com/"
+          }
         }
       },
       {
@@ -78,7 +87,7 @@
           {
             "@type": "ListItem",
             "position": 3,
-            "name": "Aurora",
+            "name": "Maple",
             "item": "https://gardenstatecoon.com/kitten-detail.html"
           }
         ]
@@ -141,7 +150,7 @@
       <span class="breadcrumb__separator" aria-hidden="true">/</span>
       <a href="kittens.html">Available Kittens</a>
       <span class="breadcrumb__separator" aria-hidden="true">/</span>
-      <span aria-current="page">Aurora</span>
+      <span aria-current="page">Maple</span>
     </nav>
 
     <!-- BACK LINK -->
@@ -154,7 +163,7 @@
       <div class="kitten-detail">
         <!-- GALLERY -->
         <div class="kitten-detail__gallery"
-             data-gallery-images='[{"srcsetAvif":"assets/kitten-1-640.avif 640w, assets/kitten-1-1024.avif 1024w, assets/kitten-1-1920.avif 1920w","srcsetWebp":"assets/kitten-1-640.webp 640w, assets/kitten-1-1024.webp 1024w, assets/kitten-1-1920.webp 1920w","srcFallback":"assets/kitten-1-1920.jpg","src640":"assets/kitten-1-640.webp","alt":"Aurora Blue Smoke Maine Coon kitten detail photo"}]'>
+             data-gallery-images='[{"srcsetAvif":"assets/kitten-1-640.avif 640w, assets/kitten-1-1024.avif 1024w, assets/kitten-1-1920.avif 1920w","srcsetWebp":"assets/kitten-1-640.webp 640w, assets/kitten-1-1024.webp 1024w, assets/kitten-1-1920.webp 1920w","srcFallback":"assets/kitten-1-1920.jpg","src640":"assets/kitten-1-640.webp","alt":"Maple blue smoke Maine Coon kitten detail photo"}]'>
         <picture>
           <source type="image/avif"
                   srcset="assets/kitten-1-640.avif 640w,
@@ -166,25 +175,27 @@
                           assets/kitten-1-1024.webp 1024w,
                           assets/kitten-1-1920.webp 1920w"
                   sizes="100vw">
-          <img src="assets/kitten-1-1920.jpg" alt="Aurora Blue Smoke Maine Coon kitten detail photo" width="1920" height="1434" fetchpriority="high" loading="eager" decoding="async">
+          <img src="assets/kitten-1-1920.jpg" alt="Maple blue smoke Maine Coon kitten detail photo" width="1920" height="1434" fetchpriority="high" loading="eager" decoding="async">
         </picture>
         </div>
 
         <!-- INFO -->
         <div class="kitten-detail__info">
-          <h1 id="kitten-name-heading" class="kitten-detail__name">Aurora</h1>
+          <h1 id="kitten-name-heading" class="kitten-detail__name">Maple</h1>
           <span class="kitten-badge">Available</span>
           <div class="kitten-detail__meta">
             <p>Female</p>
             <p>Blue Smoke</p>
-            <p>Born March 15, 2026</p>
-            <p>$2200</p>
+            <p>Price available upon request</p>
           </div>
-          <p>Aurora is a stunning Blue Smoke female with a silky coat and captivating golden eyes. She is playful, curious, and loves to cuddle. Fully socialized with children and other pets.</p>
+          <p>Maple is a sweet, easygoing blue smoke female with a soft, smoky coat. She loves a warm lap and gentle play, and is curious without being demanding — a calm, affectionate companion. Raised underfoot in our home and well-socialized.</p>
+
+          <h2>Health &amp; Care</h2>
+          <p>Maple comes from health-screened breeding cats of registered lines. Before going home she is examined by our veterinarian, receives age-appropriate vaccinations, is dewormed on schedule, and is litter-box trained. We provide a record of her veterinary care for your own vet.</p>
 
           <div class="kitten-detail__actions">
-            <a href="contact.html" class="btn btn-primary">Reserve</a>
-            <a href="contact.html" class="btn btn-secondary">Join Waitlist</a>
+            <a href="contact.html" class="btn btn-primary">Reserve Maple</a>
+            <a href="waiting-list.html" class="btn btn-secondary">Join Waiting List</a>
           </div>
         </div>
       </div>
@@ -207,12 +218,12 @@
                           assets/parent-sire-1024.webp 1024w,
                           assets/parent-sire-1920.webp 1920w"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
-          <img src="assets/parent-sire-1920.jpg" alt="Atlas — Brown Classic Tabby Maine Coon, sire of Aurora" width="1920" height="1434" loading="lazy">
+          <img src="assets/parent-sire-1920.jpg" alt="Hudson — brown classic tabby Maine Coon, sire of Maple" width="1920" height="1434" loading="lazy">
         </picture>
           </div>
           <div class="card__body">
-            <h3 class="card__title">Atlas (Sire)</h3>
-            <p class="card__text">TICA Champion · Brown Classic Tabby · HCM/PKD1/SMA Clear</p>
+            <h3 class="card__title">Hudson (Sire)</h3>
+            <p class="card__text">Brown Classic Tabby · Registered lines · Health-screened</p>
           </div>
         </div>
         <div class="card">
@@ -228,12 +239,12 @@
                           assets/parent-dam-1024.webp 1024w,
                           assets/parent-dam-1920.webp 1920w"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
-          <img src="assets/parent-dam-1920.jpg" alt="Elara — Blue Smoke Maine Coon, dam of Aurora" width="1920" height="1434" loading="lazy">
+          <img src="assets/parent-dam-1920.jpg" alt="Willow — blue smoke Maine Coon, dam of Maple" width="1920" height="1434" loading="lazy">
         </picture>
           </div>
           <div class="card__body">
-            <h3 class="card__title">Elara (Dam)</h3>
-            <p class="card__text">Blue Smoke · HCM/PKD1 Clear</p>
+            <h3 class="card__title">Willow (Dam)</h3>
+            <p class="card__text">Blue Smoke · Registered lines · Health-screened</p>
           </div>
         </div>
       </div>

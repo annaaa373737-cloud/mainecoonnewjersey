@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Idempotent batch patcher for hollywoodcoon site.
+Idempotent batch patcher for gardenstatecoon site.
 
 Operations:
 1. Fix width=/height= attrs on every <img> under assets/* to match REAL pixel

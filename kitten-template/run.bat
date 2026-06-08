@@ -1,18 +1,18 @@
 @echo off
 REM =========================================================================
-REM  Hollywood Coon — Add Kitten Launcher (Windows)
+REM  Garden State Coon — Add Kitten Launcher (Windows)
 REM
 REM  КАК ПОЛЬЗОВАТЬСЯ:
 REM  1. Скопируй эту папку (kitten-template) рядом с фотографиями нового котёнка
 REM     ИЛИ положи run.bat + kitten.json в папку с фото.
-REM  2. Ниже укажи полный путь к папке репозитория hollywoodcoon на своём ПК.
+REM  2. Ниже укажи полный путь к папке репозитория garden-state-coon на своём ПК.
 REM  3. Отредактируй kitten.json (имя, пол, окрас, дата, цена и т.д.).
 REM  4. Двойной клик по run.bat — скрипт обработает фото, создаст карточку
 REM     и опубликует изменения на GitHub (сайт обновится через ~1 минуту).
 REM =========================================================================
 
-REM >>> ОТРЕДАКТИРУЙ ЭТУ СТРОКУ — укажи путь к репозиторию hollywoodcoon <<<
-set "REPO=C:\Users\%USERNAME%\hollywoodcoon"
+REM >>> ОТРЕДАКТИРУЙ ЭТУ СТРОКУ — укажи путь к репозиторию garden-state-coon <<<
+set "REPO=C:\Users\%USERNAME%\garden-state-coon"
 
 REM ─── не меняй ниже ──────────────────────────────────────────────────────
 if not exist "%REPO%\scripts\add-kitten.js" (

@@ -1,6 +1,6 @@
 # 🐱 Добавление нового котёнка на сайт
 
-Папка-шаблон для автоматической публикации новой карточки котёнка на hollywoodcoon.com.
+Папка-шаблон для автоматической публикации новой карточки котёнка на gardenstatecoon.com.
 
 ## Как работает
 
@@ -21,8 +21,8 @@
 ## Первоначальная настройка (один раз)
 
 1. **Открой `run.bat`** (или `run.sh`) в блокноте.
-2. **Измени строку `set "REPO=..."`** на путь к репозиторию `hollywoodcoon` на твоём ПК.
-   Например: `set "REPO=C:\Users\Anna\Documents\github\hollywoodcoon"`
+2. **Измени строку `set "REPO=..."`** на путь к репозиторию `garden-state-coon` на твоём ПК.
+   Например: `set "REPO=C:\Users\ВашеИмя\Documents\github\garden-state-coon"`
 3. Убедись, что установлен **Node.js** ([nodejs.org](https://nodejs.org)) и в репозитории выполнено `npm install` (это подтянет `sharp`).
 4. Убедись, что `git push` в репозиторий проходит без запроса пароля (GitHub Desktop, SSH-ключ или credential manager).
 
@@ -36,13 +36,11 @@
      "name": "Nova",
      "gender": "Female",
      "color": "Silver Shaded",
-     "born": "April 5, 2026",
-     "price": 2300,
      "status": "available",
      "description": "Текст описания характера котёнка...",
-     "healthTesting": "HCM: Clear. PKD1: Clear. ...",
-     "sire": { "name": "Atlas", "title": "TICA Champion ..." },
-     "dam":  { "name": "Elara", "title": "Blue Smoke ..." }
+     "healthTesting": "Health-screened parents from registered lines; examined by our veterinarian.",
+     "sire": { "name": "Hudson", "title": "Brown Classic Tabby · Registered lines · Health-screened" },
+     "dam":  { "name": "Willow", "title": "Blue Smoke · Registered lines · Health-screened" }
    }
    ```
 4. **Двойной клик по `run.bat`**. Всё.
@@ -54,10 +52,10 @@
 | `name`          | ✅          | `"Nova"`                                                |
 | `gender`        | ✅          | `"Female"` / `"Male"`                                   |
 | `color`         | ✅          | `"Silver Shaded"`                                       |
-| `born`          | ✅          | `"April 5, 2026"`                                       |
-| `price`         | ✅          | `2300`                                                  |
 | `status`        | ✅          | `"available"` / `"reserved"` / `"sold"` / `"coming-soon"` |
 | `description`   | ✅          | 1–3 предложения                                         |
+| `born`          | ⬜          | `"April 5, 2026"`                                       |
+| `price`         | ⬜          | Price available upon request                            |
 | `healthTesting` | ⬜          | По умолчанию стандартный текст                          |
 | `sire`          | ⬜          | `{ "name": "...", "title": "..." }` — отец             |
 | `dam`           | ⬜          | `{ "name": "...", "title": "..." }` — мать             |

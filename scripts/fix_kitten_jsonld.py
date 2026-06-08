@@ -46,8 +46,8 @@ def patch_jsonld(html: str) -> tuple[str, bool]:
                 avail_full,
                 avail_full + ',\n          '
                 '"seller": {\n            "@type": "Organization",\n            '
-                '"name": "Hollywood Coon",\n            '
-                '"url": "https://arnold3737.github.io/hollywoodcoon/"\n          }',
+                '"name": "Garden State Coon",\n            '
+                '"url": "https://gardenstatecoon.com/"\n          }',
             )
         else:
             new_tail = tail

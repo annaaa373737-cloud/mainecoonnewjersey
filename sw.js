@@ -1,5 +1,5 @@
 /*
-  Hollywood Coon — Service Worker
+  Garden State Coon — Service Worker
   Cache-First for images & fonts, Network-First for HTML,
   Stale-While-Revalidate for CSS & JS
 
@@ -9,13 +9,11 @@
   - Caching > Cache Rules: Cache Everything for /css/* /js/* /fonts/*
 */
 
-// CACHE_VERSION is replaced at deploy time by GitHub Actions with the commit SHA.
-// Locally / before CI runs, the placeholder remains and triggers a single cache namespace.
-const CACHE_VERSION = '__COMMIT_SHA__';
-const STATIC_CACHE = `static-${CACHE_VERSION}`;
-const HTML_CACHE = `html-${CACHE_VERSION}`;
+const CACHE_NAME = 'garden-state-coon-v1';
+const STATIC_CACHE = `${CACHE_NAME}-static`;
+const HTML_CACHE = `${CACHE_NAME}-html`;
 
-/* Derive base path from SW scope so caching works on any subpath (e.g. /hollywoodcoon/) */
+/* Derive base path from SW scope so caching works on any subpath */
 const BASE = new URL('.', self.location).pathname;
 
 const STATIC_ASSETS = [

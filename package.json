@@ -1,7 +1,7 @@
 {
-  "name": "hollywoodcoon-738ad997",
+  "name": "garden-state-coon",
   "version": "1.0.0",
-  "description": "",
+  "description": "Garden State Coon — Maine Coon cattery website (Edison, NJ)",
   "main": "sw.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
